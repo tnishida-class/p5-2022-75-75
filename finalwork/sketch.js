@@ -38,7 +38,9 @@ function draw() {
   building(250,gy,10,180)
   building(290,gy,15,150)
   building(350,gy,40,50)
-  ellipse(x, y, size, size)
+  triangle(x,y-30,x+0.5*size,y+10,x-size*0.5,y+10)
+  ellipse(x, y-30, size, size)
+  
   let tempoX=x
   let tempoY=y
   
@@ -57,11 +59,11 @@ if(keyIsDown(LEFT_ARROW)){x-=2;}
 if(keyIsDown(RIGHT_ARROW)){x+=2;}
 
   for(let i =0; i<house.length; i++){
-    if(x>house[i].positionX && x<house[i].positionX+house[i].sizeX && y>house[i].positionY-house[i].sizeY ){
+    if(x+size*0.5>house[i].positionX && x-size*0.5<house[i].positionX+house[i].sizeX && y+10>house[i].positionY-house[i].sizeY ){
       x=tempoX
       y=tempoY
   }
-    if(x>house[i].positionX+house[i].sizeX && x<house[i].positionX+2*house[i].sizeX && y>house[i].positionY-(house[i].sizeY+20) ){
+    if(x+size*0.5>house[i].positionX+house[i].sizeX && x-size*0.5<house[i].positionX+2*house[i].sizeX && y+10>house[i].positionY-(house[i].sizeY+20) ){
       x=tempoX
       y=tempoY
   }
